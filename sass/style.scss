@@ -1,0 +1,86 @@
+@import "variable";
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    background-color: $Dark-Blue;
+    box-sizing: border-box;
+}
+
+.backImage {
+    background-image: url(/images/bg-desktop-dark.jpg);
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    z-index: -1;
+    background-size: cover;
+}
+
+header {
+    color: white;
+    align-items: center;
+    padding: 80px 0 20px 0;
+    h1 {
+        letter-spacing: 1rem;
+    }
+}
+
+.container {
+    max-width: 600px;
+}
+
+.newTodo {
+    background-color: $Very-Dark-Grayish-Blue2;
+    height: 60px;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    .state {
+        background-color: white;
+        width: 28px;
+        height: 28px;
+        border-radius: 100px;
+        margin: 20px;
+    }
+    input {
+        background: none;
+        color: $Light-Grayish-Blue;
+        border: none;
+        width: 80%;
+    }
+    input::placeholder {
+        color: $Dark-Grayish-Blue;
+    }
+    input:focus {
+        outline: none;
+    }
+}
+
+.liste {
+    margin-top: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.63);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+nav {
+    background-color: $Very-Dark-Grayish-Blue2;
+    height: 50px;
+    align-items: center;
+    padding: 0 20px;
+    color: $Very-Dark-Grayish-Blue;
+    button {
+        background: none;
+        border: none;
+        color: $Very-Dark-Grayish-Blue;
+    }
+    button:hover {
+        color: $Light-Grayish-Blue;
+    }
+}
+
+footer {
+    color: $Very-Dark-Grayish-Blue;
+    margin: 50px;
+}
