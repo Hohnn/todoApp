@@ -37,17 +37,28 @@ header {
     display: flex;
     align-items: center;
     .state {
-        background-color: white;
+        background-color: $Very-Dark-Grayish-Blue;
         width: 28px;
         height: 28px;
         border-radius: 100px;
         margin: 20px;
+    }
+    div.state:before {
+        background-color: $Very-Dark-Grayish-Blue2;
+        content: '';
+        width: 24px;
+        height: 24px;
+        border-radius: 100px;
+        position: absolute;
+        transform: translate(2px,2px);
+
     }
     input {
         background: none;
         color: $Light-Grayish-Blue;
         border: none;
         width: 80%;
+        caret-color: $Bright-Blue;
     }
     input::placeholder {
         color: $Dark-Grayish-Blue;
@@ -62,6 +73,39 @@ header {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.63);
     border-radius: 5px;
     overflow: hidden;
+    .todo {
+        border-radius: 0;
+        border-bottom: 1px solid $Very-Dark-Grayish-Blue;
+        .todoText {
+            color: $Light-Grayish-Blue;
+        }
+        button {
+            border: none;
+            background-color: $Very-Dark-Grayish-Blue;
+            position: relative;
+        }
+        button::after {
+            position: absolute;
+            top: 3px; bottom: 2px;
+            left: 3px; right: 2px;
+            background: $Very-Dark-Grayish-Blue2;
+            content: '';
+            z-index: 2;
+            border-radius: 100px; 
+        }
+        button:hover {
+            background: linear-gradient(130deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        }
+        button:focus:after {
+            background: linear-gradient(130deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+            background-image: url(/images/icon-check.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        button:focus {
+            background: linear-gradient(130deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        }
+    }
 }
 
 nav {
@@ -78,9 +122,20 @@ nav {
     button:hover {
         color: $Light-Grayish-Blue;
     }
+    button:focus {
+        color: $Bright-Blue;
+    }
 }
 
 footer {
     color: $Very-Dark-Grayish-Blue;
     margin: 50px;
+}
+
+.todo {
+    display: none;
+}
+
+.show {
+    display: flex !important;
 }

@@ -25,18 +25,16 @@
     </header>
     <div class="newTodo">
       <div class="state"></div>
-      <input type="text" name="create" id="create" placeholder="Create a new todo...">
+      <input type="text" name="create" id="create" placeholder="Create a new todo..." onkeypress="return runScript(event)">
     </div>
     <div class="liste">
-      <div class="newTodo todo">
-        <div class="state"></div>
-      </div>
+      <div class="mycard"></div>
       <nav class="d-flex justify-content-between">
         <span>1 items left</span>
         <div class="reste">
-          <button>All</button>
-          <button>Active</button>
-          <button>Complited</button>
+          <button id="all">All</button>
+          <button id="active">Active</button>
+          <button id="complited">Complited</button>
         </div>
         <button>Clear Complited</button>
       </nav>
@@ -49,5 +47,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Hohnn</a>.
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
