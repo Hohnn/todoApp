@@ -113,11 +113,11 @@ nav {
     height: 50px;
     align-items: center;
     padding: 0 20px;
-    color: $Very-Dark-Grayish-Blue;
+    color: $Dark-Grayish-Blue;
     button {
         background: none;
         border: none;
-        color: $Very-Dark-Grayish-Blue;
+        color: $Dark-Grayish-Blue;
     }
     button:hover {
         color: $Light-Grayish-Blue;
@@ -138,4 +138,25 @@ footer {
 
 .show {
     display: flex !important;
+}
+
+.del {
+    display: none;
+}
+
+.suppr {
+    background-image: url(/images/icon-cross.svg);
+    width: 50px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.todo:hover {
+    .suppr {
+        display: block;
+    }
 }
