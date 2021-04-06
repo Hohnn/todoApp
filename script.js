@@ -36,9 +36,11 @@ function runScript(e) {
                     console.log(para)
                     var target = event.target;
                     var parent = target.parentElement;
+                    var parpar = parent.parentElement;
                     console.log(parent.id)
                     const jjj = document.getElementById(parent.id)
-                    jjj.classList.toggle('show')
+                    //jjj.classList.toggle('show')
+                    parpar.innerHTML = '';
                    console.log(jjj.classList)
                 }
                 
@@ -52,8 +54,42 @@ function runScript(e) {
 
         tb.value = '';
         click();
+        compClick();
         
         return false;        
+        
+    }
+}
+
+function compClick() {
+    const todo = document.querySelectorAll('.todo')
+    const compi = document.getElementById('complited')
+    const clear = document.getElementById('clear')
+    const test = document.querySelectorAll('.test')
+    console.log(todo[0].childNodes[0].classList)
+    console.log(test.length)
+    compi.onclick = compCheck
+    clear.onclick = clearCheck
+    function compCheck() {
+        for (let i = 0; i < test.length; i++) {
+            console.log(i)
+            if (todo[i].childNodes[0].classList == "state complited") {
+                
+            } else {
+                todo[i].classList.remove('show')
+            }
+    }
+    
+        
+    }
+    function clearCheck() {
+        for (let i = 0; i < test.length; i++) {
+            console.log(i)
+            if (todo[i].childNodes[0].classList == "state complited") {
+                test[i].innerHTML = ''
+            }
+    }
+    
         
     }
 }
