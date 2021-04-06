@@ -109,36 +109,53 @@ header h1 {
 }
 
 .liste .todo button {
-  border: none;
-  background-color: #4d5066;
+  border: 2px solid #4d5066;
+  background: none;
   position: relative;
 }
 
-.liste .todo button::after {
+.liste .todo button:before {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: '';
+  border-radius: 100px;
+}
+
+.liste .todo button:hover:before {
+  background: linear-gradient(130deg, #57ddff, #c058f3);
+}
+
+.liste .todo button:after {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+  right: 1px;
+  content: '';
+  border-radius: 100px;
+  background-color: #393a4c;
+}
+
+.liste .todo .complited {
+  background: linear-gradient(130deg, #57ddff, #c058f3);
+}
+
+.liste .todo .complited::after {
   position: absolute;
   top: 3px;
   bottom: 2px;
   left: 3px;
   right: 2px;
-  background: #393a4c;
+  background-image: url(/images/icon-check.svg);
   content: '';
   z-index: 2;
   border-radius: 100px;
-}
-
-.liste .todo button:hover {
-  background: linear-gradient(130deg, #57ddff, #c058f3);
-}
-
-.liste .todo button:focus:after {
-  background: linear-gradient(130deg, #57ddff, #c058f3);
-  background-image: url(/images/icon-check.svg);
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.liste .todo button:focus {
-  background: linear-gradient(130deg, #57ddff, #c058f3);
+  background-color: rgba(0, 206, 209, 0);
 }
 
 nav {

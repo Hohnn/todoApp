@@ -80,30 +80,48 @@ header {
             color: $Light-Grayish-Blue;
         }
         button {
-            border: none;
-            background-color: $Very-Dark-Grayish-Blue;
+            border: 2px solid $Very-Dark-Grayish-Blue;
+            background: none;
             position: relative;
         }
-        button::after {
+
+        button:before {
+            position: absolute;
+            top: -1px; bottom: -1px;
+            left: -1px; right: -1px;
+            content: '';
+            border-radius: 100px;
+            
+        }
+        button:hover:before {
+            background: linear-gradient(130deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+            
+        }
+        button:after {
+            position: absolute;
+            top: 1px; bottom: 1px;
+            left: 1px; right: 1px;
+            content: '';
+            border-radius: 100px;
+            background-color: $Very-Dark-Grayish-Blue2;
+            
+        }
+
+        .complited {
+            background: linear-gradient(130deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        }
+
+        .complited::after {
             position: absolute;
             top: 3px; bottom: 2px;
             left: 3px; right: 2px;
-            background: $Very-Dark-Grayish-Blue2;
+            background-image: url(/images/icon-check.svg);
             content: '';
             z-index: 2;
             border-radius: 100px; 
-        }
-        button:hover {
-            background: linear-gradient(130deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-        }
-        button:focus:after {
-            background: linear-gradient(130deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-            background-image: url(/images/icon-check.svg);
             background-repeat: no-repeat;
             background-position: center;
-        }
-        button:focus {
-            background: linear-gradient(130deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+            background-color: rgba(0, 206, 209, 0);
         }
     }
 }

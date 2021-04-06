@@ -24,10 +24,12 @@ function runScript(e) {
             console.log([i])
             function click () {
                 const suppr = document.getElementsByClassName('suppr')
-                console.log(suppr)
+                const state = document.getElementsByClassName('state')
+                console.log(state)
 
                 for (let i = 0; i < suppr.length; i++) {
-                    suppr[i].onclick = test;                 
+                    suppr[i].onclick = test;
+                    state[i+1].onclick = comp;                 
                     };
 
                 function test (event) {
@@ -38,10 +40,14 @@ function runScript(e) {
                     const jjj = document.getElementById(parent.id)
                     jjj.classList.toggle('show')
                    console.log(jjj.classList)
-                }    
+                }
                 
-            }     
-            
+                function comp(event) {
+                    var target = event.target;
+                    target.classList.toggle('complited')
+                    console.log(target.classList)
+                }                
+            }   
         }
 
         tb.value = '';
