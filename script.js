@@ -65,22 +65,44 @@ function compClick() {
     const todo = document.querySelectorAll('.todo')
     const compi = document.getElementById('complited')
     const clear = document.getElementById('clear')
+    const active = document.getElementById('active')
+    const all = document.getElementById('all')
     const test = document.querySelectorAll('.test')
-    console.log(todo[0].childNodes[0].classList)
-    console.log(test.length)
-    compi.onclick = compCheck
-    clear.onclick = clearCheck
+    console.log(todo[0].childNodes[0].classList);
+    console.log(test.length);
+    compi.onclick = compCheck;
+    clear.onclick = clearCheck;
+    active.onclick = activeCheck;
+    all.onclick = allCheck;
     function compCheck() {
         for (let i = 0; i < test.length; i++) {
             console.log(i)
             if (todo[i].childNodes[0].classList == "state complited") {
-                
+                todo[i].classList.add('show')
             } else {
                 todo[i].classList.remove('show')
             }
+        }
     }
+    function activeCheck() {
+        for (let i = 0; i < test.length; i++) {
+            console.log(i)
+            if (todo[i].childNodes[0].classList == "state") {
+                todo[i].classList.add('show')
+            } else {
+                todo[i].classList.remove('show')
+            }
+        }
     
-        
+    }
+    function allCheck() {
+        for (let i = 0; i < test.length; i++) {
+            console.log(i)
+            if (todo[i].childNodes[0].classList == "state" || "state complited") {
+                todo[i].classList.add('show')
+            }
+        }
+    
     }
     function clearCheck() {
         for (let i = 0; i < test.length; i++) {
@@ -88,9 +110,8 @@ function compClick() {
             if (todo[i].childNodes[0].classList == "state complited") {
                 test[i].innerHTML = ''
             }
-    }
+        }
     
-        
     }
 }
 
