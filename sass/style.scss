@@ -16,6 +16,15 @@ body {
     background-size: cover;
 }
 
+.moonLight {
+    background-image: url(/images/icon-sun.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
 header {
     color: white;
     align-items: center;
@@ -121,7 +130,7 @@ header {
             border-radius: 100px; 
             background-repeat: no-repeat;
             background-position: center;
-            background-color: rgba(0, 206, 209, 0);
+            background-color: rgba(0, 206, 209, 0) !important;
         }
     }
 }
@@ -177,4 +186,74 @@ footer {
     .suppr {
         display: block;
     }
+}
+
+.lightBody {
+    background-color: $Very-Light-Gray;
+    .backImage {
+        background-image: url(/images/bg-desktop-light.jpg);    
+    }
+    .moonLight {
+        background-image: url(/images/icon-moon.svg);
+    }
+    .newTodo {
+        background-color: white;
+        input {
+            color: $Very-Dark-Grayish-Blue;
+        }
+        div.state {
+            background-color: $Very-Light-Grayish-Blue;
+        }
+        div.state::before {
+            background-color: white;
+        }
+    }
+    .liste {
+        .todo {
+            border-bottom: 1px solid $Very-Light-Grayish-Blue;
+            button {
+                border: 2px solid $Very-Light-Grayish-Blue;
+            }
+            button:after {
+                background-color: white;
+            }
+            .todoText {
+                color: $Very-Dark-Grayish-Blue;
+            }
+        }
+    }
+    nav {
+        background-color: white;
+        button:hover {
+            color: $Very-Dark-Grayish-Blue;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    #clear {
+        display: none;
+    }
+
+    #items {
+        display: none;
+    }
+
+    .mobile {
+        justify-content: center !important;
+    }
+    .backImage {
+        background-image: url(/images/bg-mobile-dark.jpg);
+    }
+    .lightBody {
+        .backImage {
+            background-image: url(/images/bg-mobile-light.jpg);
+        }
+    }
+}
+
+#card:empty {
+    display: none;
 }

@@ -7,6 +7,7 @@ function runScript(e) {
     if (e.keyCode == 13 && input.value != '') {        
         let para = document.createElement("div")
         para.classList = "test"
+        para.id = "card"
         const ggg = document.querySelectorAll(".test")        
         for (let a = ggg.length; a < ggg.length+1; a++) {
             para.innerHTML = '<div class="newTodo todo show" id="oui'+a+'"><button class="state"></button><div class="todoText" ></div><div class="suppr"></div></div>'
@@ -39,9 +40,9 @@ function runScript(e) {
                     var parpar = parent.parentElement;
                     console.log(parent.id)
                     const jjj = document.getElementById(parent.id)
-                    //jjj.classList.toggle('show')
                     parpar.innerHTML = '';
                    console.log(jjj.classList)
+                   itemCount()
                 }
                 
                 function comp(event) {
@@ -57,6 +58,7 @@ function runScript(e) {
         click();
         compClick();
         itemCount();
+        deleteCard()
         
         return false;        
         
@@ -136,6 +138,23 @@ function itemCount() {
 
 }
 
+function toggleMod() {
+    const body = document.getElementById('Toggle')
+    const moonLight = document.getElementById('moonLight')
+    moonLight.onclick = test;
+    function test() {
+        body.classList.toggle('lightBody')
+    }
+
+}
+
+toggleMod();
+
+function deleteCard() {
+    const card = document.getElementById('card')
+    console.log(card.innerHTML)
+}
+deleteCard()
 
 
 

@@ -16,12 +16,14 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
+<body id="Toggle">
   <div class="backImage"></div>
   <div class="container">
     <header class="d-flex justify-content-between">
       <h1>TODO</h1>
-      <img src="images/icon-sun.svg" alt="">
+      <div id="moonLight" class="moonLight"></div>
+      <!-- <img id="sun" src="images/icon-sun.svg" alt="sun">
+      <img class="del" id="moon" src="images/icon-moon.svg" alt="moon"> -->
     </header>
     <div class="newTodo">
       <div class="state"></div>
@@ -31,14 +33,14 @@
       <div class="mycard">
 
       </div>
-      <nav class="d-flex justify-content-between">
+      <nav class="d-flex justify-content-between mobile">
         <span id="items"></span>
         <div class="reste">
           <button id="all">All</button>
           <button id="active">Active</button>
-          <button id="complited">Complited</button>
+          <button id="complited">Completed</button>
         </div>
-        <button id="clear">Clear Complited</button>
+        <button id="clear">Clear Completed</button>
       </nav>
     </div>
     <footer class="text-center">Drag and drop to reorder list</footer>

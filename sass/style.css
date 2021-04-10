@@ -15,6 +15,15 @@ body {
   background-size: cover;
 }
 
+.moonLight {
+  background-image: url(/images/icon-sun.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
 header {
   color: white;
   -webkit-box-align: center;
@@ -45,7 +54,7 @@ header h1 {
 }
 
 .newTodo .state {
-  background-color: #4d5066;
+  background-color: #484b6a;
   width: 28px;
   height: 28px;
   border-radius: 100px;
@@ -65,26 +74,26 @@ header h1 {
 
 .newTodo input {
   background: none;
-  color: #cacde8;
+  color: #d2d3db;
   border: none;
   width: 80%;
   caret-color: #3a7bfd;
 }
 
 .newTodo input::-webkit-input-placeholder {
-  color: #777a92;
+  color: #9394a5;
 }
 
 .newTodo input:-ms-input-placeholder {
-  color: #777a92;
+  color: #9394a5;
 }
 
 .newTodo input::-ms-input-placeholder {
-  color: #777a92;
+  color: #9394a5;
 }
 
 .newTodo input::placeholder {
-  color: #777a92;
+  color: #9394a5;
 }
 
 .newTodo input:focus {
@@ -101,15 +110,15 @@ header h1 {
 
 .liste .todo {
   border-radius: 0;
-  border-bottom: 1px solid #4d5066;
+  border-bottom: 1px solid #484b6a;
 }
 
 .liste .todo .todoText {
-  color: #cacde8;
+  color: #d2d3db;
 }
 
 .liste .todo button {
-  border: 2px solid #4d5066;
+  border: 2px solid #484b6a;
   background: none;
   position: relative;
 }
@@ -155,7 +164,7 @@ header h1 {
   border-radius: 100px;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(0, 206, 209, 0);
+  background-color: rgba(0, 206, 209, 0) !important;
 }
 
 nav {
@@ -165,17 +174,17 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 20px;
-  color: #777a92;
+  color: #9394a5;
 }
 
 nav button {
   background: none;
   border: none;
-  color: #777a92;
+  color: #9394a5;
 }
 
 nav button:hover {
-  color: #cacde8;
+  color: #d2d3db;
 }
 
 nav button:focus {
@@ -183,7 +192,7 @@ nav button:focus {
 }
 
 footer {
-  color: #4d5066;
+  color: #484b6a;
   margin: 50px;
 }
 
@@ -214,5 +223,81 @@ footer {
 
 .todo:hover .suppr {
   display: block;
+}
+
+.lightBody {
+  background-color: #fafafa;
+}
+
+.lightBody .backImage {
+  background-image: url(/images/bg-desktop-light.jpg);
+}
+
+.lightBody .moonLight {
+  background-image: url(/images/icon-moon.svg);
+}
+
+.lightBody .newTodo {
+  background-color: white;
+}
+
+.lightBody .newTodo input {
+  color: #484b6a;
+}
+
+.lightBody .newTodo div.state {
+  background-color: #e4e5f1;
+}
+
+.lightBody .newTodo div.state::before {
+  background-color: white;
+}
+
+.lightBody .liste .todo {
+  border-bottom: 1px solid #e4e5f1;
+}
+
+.lightBody .liste .todo button {
+  border: 2px solid #e4e5f1;
+}
+
+.lightBody .liste .todo button:after {
+  background-color: white;
+}
+
+.lightBody .liste .todo .todoText {
+  color: #484b6a;
+}
+
+.lightBody nav {
+  background-color: white;
+}
+
+.lightBody nav button:hover {
+  color: #484b6a;
+}
+
+@media screen and (max-width: 500px) {
+  #clear {
+    display: none;
+  }
+  #items {
+    display: none;
+  }
+  .mobile {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  .backImage {
+    background-image: url(/images/bg-mobile-dark.jpg);
+  }
+  .lightBody .backImage {
+    background-image: url(/images/bg-mobile-light.jpg);
+  }
+}
+
+#card:empty {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
