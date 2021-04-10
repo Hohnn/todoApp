@@ -48,6 +48,7 @@ function runScript(e) {
                     var target = event.target;
                     target.classList.toggle('complited')
                     console.log(target.classList)
+                    itemCount()
                 }                
             }   
         }
@@ -55,6 +56,7 @@ function runScript(e) {
         tb.value = '';
         click();
         compClick();
+        itemCount();
         
         return false;        
         
@@ -76,7 +78,6 @@ function compClick() {
     all.onclick = allCheck;
     function compCheck() {
         for (let i = 0; i < test.length; i++) {
-            console.log(i)
             if (todo[i].childNodes[0].classList == "state complited") {
                 todo[i].classList.add('show')
             } else {
@@ -86,7 +87,6 @@ function compClick() {
     }
     function activeCheck() {
         for (let i = 0; i < test.length; i++) {
-            console.log(i)
             if (todo[i].childNodes[0].classList == "state") {
                 todo[i].classList.add('show')
             } else {
@@ -97,7 +97,6 @@ function compClick() {
     }
     function allCheck() {
         for (let i = 0; i < test.length; i++) {
-            console.log(i)
             if (todo[i].childNodes[0].classList == "state" || "state complited") {
                 todo[i].classList.add('show')
             }
@@ -106,7 +105,6 @@ function compClick() {
     }
     function clearCheck() {
         for (let i = 0; i < test.length; i++) {
-            console.log(i)
             if (todo[i].childNodes[0].classList == "state complited") {
                 test[i].innerHTML = ''
             }
@@ -114,6 +112,30 @@ function compClick() {
     
     }
 }
+
+
+function itemCount() {
+    const todo = document.querySelectorAll('.todo')
+    const test = document.querySelectorAll('.test')
+    const state = document.querySelectorAll('.state')
+    const items = document.getElementById('items')
+    let t = 0
+    for (let i = 0; i < test.length; i++) {
+        if (todo[i].childNodes[0].classList == "state") {
+            t++
+            console.log(t)
+        }
+        
+        if ( t == 0) {
+            items.innerHTML = t + ' item left'
+        } else {
+            items.innerHTML = t + ' items left'
+        }
+    }
+    
+
+}
+
 
 
 
