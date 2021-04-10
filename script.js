@@ -40,9 +40,10 @@ function runScript(e) {
                     var parpar = parent.parentElement;
                     console.log(parent.id)
                     const jjj = document.getElementById(parent.id)
-                    parpar.innerHTML = '';
-                   console.log(jjj.classList)
-                   itemCount()
+                    const hh = jjj.parentElement
+                    console.log(hh)
+                    hh.parentNode.removeChild(hh)
+                    itemCount()
                 }
                 
                 function comp(event) {
@@ -58,7 +59,6 @@ function runScript(e) {
         click();
         compClick();
         itemCount();
-        deleteCard()
         
         return false;        
         
@@ -108,7 +108,7 @@ function compClick() {
     function clearCheck() {
         for (let i = 0; i < test.length; i++) {
             if (todo[i].childNodes[0].classList == "state complited") {
-                test[i].innerHTML = ''
+                test[i].parentNode.removeChild(test[i])
             }
         }
     
@@ -121,18 +121,19 @@ function itemCount() {
     const test = document.querySelectorAll('.test')
     const state = document.querySelectorAll('.state')
     const items = document.getElementById('items')
+    console.log(test.length)
     let t = 0
     for (let i = 0; i < test.length; i++) {
         if (todo[i].childNodes[0].classList == "state") {
             t++
             console.log(t)
-        }
+        };        
         
-        if ( t == 0) {
-            items.innerHTML = t + ' item left'
-        } else {
-            items.innerHTML = t + ' items left'
-        }
+    }
+    if ( t == 0) {
+        items.innerHTML = t + ' item left'
+    } else {
+        items.innerHTML = t + ' items left'
     }
     
 
@@ -149,12 +150,6 @@ function toggleMod() {
 }
 
 toggleMod();
-
-function deleteCard() {
-    const card = document.getElementById('card')
-    console.log(card.innerHTML)
-}
-deleteCard()
 
 
 
