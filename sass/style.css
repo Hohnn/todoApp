@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
@@ -299,5 +300,10 @@ footer {
 
 #card:empty {
   display: none;
+}
+
+.barré {
+  text-decoration: line-through;
+  color: #9394a5 !important;
 }
 /*# sourceMappingURL=style.css.map */

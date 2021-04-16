@@ -49,7 +49,7 @@ function runScript(e) {
                 function comp(event) {
                     var target = event.target;
                     target.classList.toggle('complited')
-                    console.log(target.classList)
+                    target.parentNode.childNodes[1].classList.toggle('barré')
                     itemCount()
                 }                
             }   
@@ -108,6 +108,7 @@ function compClick() {
     function clearCheck() {
         for (let i = 0; i < test.length; i++) {
             if (todo[i].childNodes[0].classList == "state complited") {
+                console.log(test[i])
                 test[i].parentNode.removeChild(test[i])
             }
         }

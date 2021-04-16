@@ -257,3 +257,8 @@ footer {
 #card:empty {
     display: none;
 }
+
+.barré {
+    text-decoration: line-through;
+    color: $Dark-Grayish-Blue !important;
+}
