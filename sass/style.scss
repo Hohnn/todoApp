@@ -8,7 +8,7 @@ body {
 }
 
 .backImage {
-    background-image: url(/images/bg-desktop-dark.jpg);
+    background-image: url(../images/bg-desktop-dark.jpg);
     width: 100%;
     height: 300px;
     position: absolute;
@@ -17,7 +17,7 @@ body {
 }
 
 .moonLight {
-    background-image: url(/images/icon-sun.svg);
+    background-image: url(../images/icon-sun.svg);
     background-repeat: no-repeat;
     background-position: center;
     width: 40px;
@@ -124,7 +124,7 @@ header {
             position: absolute;
             top: 3px; bottom: 2px;
             left: 3px; right: 2px;
-            background-image: url(/images/icon-check.svg);
+            background-image: url(../images/icon-check.svg);
             content: '';
             z-index: 2;
             border-radius: 100px; 
@@ -172,7 +172,7 @@ footer {
 }
 
 .suppr {
-    background-image: url(/images/icon-cross.svg);
+    background-image: url(../images/icon-cross.svg);
     width: 50px;
     height: 100%;
     background-repeat: no-repeat;
@@ -191,10 +191,10 @@ footer {
 .lightBody {
     background-color: $Very-Light-Gray;
     .backImage {
-        background-image: url(/images/bg-desktop-light.jpg);    
+        background-image: url(../images/bg-desktop-light.jpg);    
     }
     .moonLight {
-        background-image: url(/images/icon-moon.svg);
+        background-image: url(../images/icon-moon.svg);
     }
     .newTodo {
         background-color: white;
@@ -245,11 +245,11 @@ footer {
         justify-content: center !important;
     }
     .backImage {
-        background-image: url(/images/bg-mobile-dark.jpg);
+        background-image: url(../images/bg-mobile-dark.jpg);
     }
     .lightBody {
         .backImage {
-            background-image: url(/images/bg-mobile-light.jpg);
+            background-image: url(../images/bg-mobile-light.jpg);
         }
     }
 }
