@@ -30,7 +30,7 @@
       <input type="text" name="create" id="create" placeholder="Create a new todo..." onkeypress="return runScript(event)">
     </div>
     <div class="liste">
-      <div class="mycard">
+      <div class="mycard" ondrop="drop_handler(event)" ondragover="dragover_handler(event)">
 
       </div>
       <nav class="d-flex justify-content-between mobile">

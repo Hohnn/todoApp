@@ -8,6 +8,8 @@ function runScript(e) {
         let para = document.createElement("div")
         para.classList = "test"
         para.id = "card"
+        para.setAttribute('draggable', true)
+        para.setAttribute('ondragstart', 'dragstart_handler(event)')
         const ggg = document.querySelectorAll(".test")        
         for (let a = ggg.length; a < ggg.length+1; a++) {
             para.innerHTML = '<div class="newTodo todo show" id="oui'+a+'"><button class="state"></button><div class="todoText" ></div><div class="suppr"></div></div>'
@@ -152,8 +154,30 @@ function toggleMod() {
 
 toggleMod();
 
+function dragstart_handler(ev) {
+    // On ajoute différents types de données transportées
+    ev.dataTransfer.setData("text/plain", ev.target.innerHTML);
+    ev.dataTransfer.setData("application/my-app", ev.target.id);
+    ev.dataTransfer.dropEffect = "move";
+}
 
 
+function dragover_handler(ev) {
+    ev.preventDefault();
+    ev.dataTransfer.dropEffect = "move";
+}
+function drop_handler(ev) {
+    ev.preventDefault();
+    // On récupère l'identifiant de la cible et on ajoute l'élément déplacé au DOM de la cible
+    var data = ev.dataTransfer.getData("application/my-app");
+    if (ev.target.className == "mycard") {
+        ev.target.appendChild(document.getElementById(data));
+        console.log('pk')
+    } else if (ev.target.classList.contains('newTodo')) {
+        ev.target.parentNode.parentNode.insertBefore(document.getElementById(data), ev.target.parentNode.nextSibling);
+        console.log(ev.target.parentNode.nextSibling)
+    }
+}
 
 
 
