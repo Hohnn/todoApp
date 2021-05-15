@@ -197,16 +197,6 @@ footer {
   margin: 50px;
 }
 
-.todo {
-  display: none;
-}
-
-.show {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-}
-
 .del {
   display: none;
 }
